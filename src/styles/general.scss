@@ -1,4 +1,8 @@
-@use './partials/mixins.scss';
-@use './partials/variable.scss';
+@use './partials/mixins.scss' as *;
+@use './partials/variable.scss' as *;
 
-@import 'bootstrap/scss/bootstrap'
+@import 'bootstrap/scss/bootstrap';
+
+body{
+    font-family: $font;
+}
