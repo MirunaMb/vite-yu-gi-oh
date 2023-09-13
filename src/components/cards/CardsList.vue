@@ -1,10 +1,10 @@
 <script>
 import Card from './Card.vue';
-
+import { store } from '../../data/store.js';
 export default {
   data(){
     return{
-    cards: [],
+    store,
     };
   },
   components: { Card},
@@ -22,7 +22,7 @@ export default {
     </div>  -->
 
     <Card 
-    v-for="(card, id) in cards" :key="id"
+    v-for="(card, id) in store.cards" :key="id"
     
     :image="card.card_images[0].image_url"
     :name="card.name"
