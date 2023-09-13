@@ -11,6 +11,7 @@ export default {
   data(){
     return{
     store,
+    archetypesLoaded: false,
     };
   },
 
@@ -21,7 +22,12 @@ export default {
       axios.get(endpoint).then((response) =>{
       // console.log(response.data);
       this.store.cards = response.data.data;
+      // this.archetypesLoaded = true;
     });
+    },
+    handleFilter(){
+      const apiUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0&archetype=${selectedArchetype}`;
+      this.fetchCards(apiUrl);
     }
   },
 
@@ -33,7 +39,7 @@ export default {
 </script>
 <template>
   <AppHeader />
-  <BaseSelect />
+  <BaseSelect @filter="handleFilter"/> <!-- Ascolta l'evento "filter" da BaseSelect -->
   <AppMain />
 </template>
 <style lang="scss">
