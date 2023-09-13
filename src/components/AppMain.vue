@@ -7,7 +7,7 @@ export default {
 <template>
     <main class="container">
        <CardsList />
-   </main>>
+   </main>
 </template>
 <style lang="scss" scoped>
 .container {
