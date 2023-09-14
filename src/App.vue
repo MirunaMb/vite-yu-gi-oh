@@ -11,7 +11,7 @@ export default {
   data(){
     return{
     store,
-    archetypesLoaded: false,
+   
     };
   },
 
@@ -22,11 +22,11 @@ export default {
       axios.get(endpoint).then((response) =>{
       // console.log(response.data);
       this.store.cards = response.data.data;
-      // this.archetypesLoaded = true;
+      
     });
     },
-    handleFilter(){
-      const apiUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0&archetype=${selectedArchetype}`;
+    handleFilter(selectedArchetype){
+      const apiUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0&archetype=${selectedArchetype.archetype_name}`;
       this.fetchCards(apiUrl);
     }
   },

@@ -15,8 +15,8 @@ created() {
 methods: {
   fetchArchetypes(){
     axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php').then((response) =>{
-      // console.log(response.data.data);
-      this.archetypes =response.data.data;
+      // console.log(response.data);
+      this.archetypes =response.data;
     })
     .catch((error) => {
       console.error('Error:',error);
